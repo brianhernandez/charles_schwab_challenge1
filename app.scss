@@ -1,10 +1,17 @@
+$red: #c7454e;
+$green: #a3d25a;
+$blue: #5aaaec;
+$white: #ffffff;
+$gray: #424242;
+$border-radius: 2px;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #424242;
+  color: $gray;
 }
 
 .module {
@@ -14,6 +21,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  background-color: lighten($gray, 65%);
 
 }
 
@@ -21,14 +29,29 @@ body {
   max-width: 230px;
   min-width: 200px;
   min-height: 250px;
+  margin: 15px;
   display: flex;
   align-items: baseline;
   justify-content: space-around;
+  border-radius: $border-radius;
+
+  &.module__box--red {
+    background-color: $red;
+  }
+  &.module__box--green {
+    background-color: $green;
+  }
+  &.module__box--blue {
+    background-color: $blue;
+  }
+  &.module__box--white {
+    background-color: $white;
+  }
 }
 
 .module__button {
   align-self: flex-end;
-
+  padding: 8px 15px;
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -37,4 +60,16 @@ body {
   text-transform: none;
   -webkit-appearance: button;
   border: none;
+  border-radius: $border-radius;
+  transition: .3s background-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($gray, 55%);
+  }
+
+  &.module__button--white {
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+  }
 }

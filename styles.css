@@ -17,23 +17,39 @@ body {
       flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background-color: #e8e8e8;
 }
 
 .module__box {
   max-width: 230px;
   min-width: 200px;
   min-height: 250px;
+  margin: 15px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: baseline;
       align-items: baseline;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border-radius: 2px;
+}
+.module__box.module__box--red {
+  background-color: #c7454e;
+}
+.module__box.module__box--green {
+  background-color: #a3d25a;
+}
+.module__box.module__box--blue {
+  background-color: #5aaaec;
+}
+.module__box.module__box--white {
+  background-color: #ffffff;
 }
 
 .module__button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  padding: 8px 15px;
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -42,4 +58,14 @@ body {
   text-transform: none;
   -webkit-appearance: button;
   border: none;
+  border-radius: 2px;
+  transition: .3s background-color;
+}
+.module__button:hover {
+  cursor: pointer;
+  background-color: #cecece;
+}
+.module__button.module__button--white {
+  border: 1px solid #424242;
+  border-radius: 2px;
 }
