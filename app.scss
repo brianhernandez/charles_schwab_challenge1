@@ -11,29 +11,24 @@ body {
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
 }
 
 .module__box {
   max-width: 230px;
   min-width: 200px;
   min-height: 250px;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: baseline;
-      align-items: baseline;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: baseline;
+  justify-content: space-around;
 }
 
 .module__button {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
+
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
