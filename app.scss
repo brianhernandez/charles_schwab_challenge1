@@ -1,3 +1,4 @@
+/** Variables **/
 $red: #c7454e;
 $green: #a3d25a;
 $blue: #5aaaec;
@@ -5,6 +6,7 @@ $white: #ffffff;
 $gray: #424242;
 $border-radius: 2px;
 
+/** Basic Styles **/
 * {
   box-sizing: border-box;
 }
@@ -14,6 +16,7 @@ body {
   color: $gray;
 }
 
+/** Module Component **/
 .module {
   max-width: 980px;
   margin-left: auto;
@@ -34,6 +37,7 @@ body {
   align-items: baseline;
   justify-content: space-around;
   border-radius: $border-radius;
+  transition: .3s background-color;
 
   &.module__box--red {
     background-color: $red;
