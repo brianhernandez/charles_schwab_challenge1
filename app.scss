@@ -5,6 +5,7 @@ $blue: #5aaaec;
 $white: #ffffff;
 $gray: #424242;
 $border-radius: 2px;
+$width: 230px;
 
 /** Basic Styles **/
 * {
@@ -12,31 +13,30 @@ $border-radius: 2px;
 }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: $gray;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /** Module Component **/
 .module {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: lighten($gray, 65%);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  background-color: lighten($gray, 65%);
-
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
 }
 
 .module__box {
-  max-width: 230px;
-  min-width: 200px;
-  min-height: 250px;
-  margin: 15px;
-  display: flex;
   align-items: baseline;
-  justify-content: space-around;
   border-radius: $border-radius;
+  display: flex;
+  justify-content: space-around;
+  margin: 7px;
+  max-width: $width;
+  min-height: 250px;
+  min-width: $width;
   transition: .3s background-color;
 
   &.module__box--red {
@@ -54,17 +54,18 @@ body {
 }
 
 .module__button {
+  -webkit-appearance: button;
   align-self: flex-end;
-  padding: 8px 15px;
+  background-color: $white;
+  border-radius: $border-radius;
+  border: none;
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 15px 0;
   overflow: visible;
+  padding: 8px 15px;
   text-transform: none;
-  -webkit-appearance: button;
-  border: none;
-  border-radius: $border-radius;
   transition: .3s background-color;
 
   &:hover {
@@ -72,7 +73,7 @@ body {
     background-color: lighten($gray, 55%);
   }
 
-  &.module__button--white {
+  &.module__button--reset {
     border: 1px solid $gray;
     border-radius: $border-radius;
   }

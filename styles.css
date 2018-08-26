@@ -5,36 +5,36 @@
 }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #424242;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /** Module Component **/
 .module {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #e8e8e8;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #e8e8e8;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
 }
 
 .module__box {
-  max-width: 230px;
-  min-width: 200px;
-  min-height: 250px;
-  margin: 15px;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-align: baseline;
       align-items: baseline;
+  border-radius: 2px;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border-radius: 2px;
+  margin: 7px;
+  max-width: 230px;
+  min-height: 250px;
+  min-width: 230px;
   transition: .3s background-color;
 }
 .module__box.module__box--red {
@@ -51,25 +51,26 @@ body {
 }
 
 .module__button {
+  -webkit-appearance: button;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  padding: 8px 15px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: none;
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 15px 0;
   overflow: visible;
+  padding: 8px 15px;
   text-transform: none;
-  -webkit-appearance: button;
-  border: none;
-  border-radius: 2px;
   transition: .3s background-color;
 }
 .module__button:hover {
   cursor: pointer;
   background-color: #cecece;
 }
-.module__button.module__button--white {
+.module__button.module__button--reset {
   border: 1px solid #424242;
   border-radius: 2px;
 }

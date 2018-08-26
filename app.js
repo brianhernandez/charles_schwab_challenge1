@@ -1,44 +1,53 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     $moduleElement = $('.module');
 
     $moduleElement.on('click', function(event) {
-      colorButton = event.target;
+      buttonClasses = event.target.classList;
 
-      if (colorButton.classList.contains('module__button--red')) {
+      if (buttonClasses.contains('module__button--red')) {
         toggleColor('red');
-      } else if (colorButton.classList.contains('module__button--green')) {
+      } else if (buttonClasses.contains('module__button--green')) {
         toggleColor('green');
-      } else if (colorButton.classList.contains('module__button--blue')) {
+      } else if (buttonClasses.contains('module__button--blue')) {
         toggleColor('blue');
-      } else if (colorButton.classList.contains('module__button--white')) {
-        toggleColor('white');
+      } else if (buttonClasses.contains('module__button--reset')) {
+        toggleColor('reset');
       }
     });
 
     function toggleColor(color) {
-      $nonWhiteElements = $('.module').children().not('.module__box--white');
+      $colorBoxes = $('.module').children().not('.module__box--white');
 
-      if (color !== 'white') {
+      if (color !== 'reset') {
         switch (color) {
           case 'red':
-            $nonWhiteElements.removeClass('module__box--green module__box--blue')
-              .addClass('module__box--red');
+            makeRed($colorBoxes);
             break;
           case 'green':
-            $nonWhiteElements.removeClass('module__box--red module__box--blue')
-              .addClass('module__box--green');
+            makeGreen($colorBoxes);
             break;
           case 'blue':
-            $nonWhiteElements.removeClass('module__box--red module__box--green')
-              .addClass('module__box--blue');
+            makeBlue($colorBoxes);
             break;
         }
       } else {
-        $($nonWhiteElements[0]).removeClass('module__box--green module__box--blue')
+        makeRed($($colorBoxes[0]));
+        makeGreen($($colorBoxes[1]));
+        makeBlue($($colorBoxes[2]));
+      }
+
+      function makeRed($object) {
+        $object.removeClass('module__box--green module__box--blue')
           .addClass('module__box--red');
-        $($nonWhiteElements[1]).removeClass('module__box--red module__box--blue')
+      }
+
+      function makeGreen($object) {
+        $object.removeClass('module__box--red module__box--blue')
           .addClass('module__box--green');
-        $($nonWhiteElements[2]).removeClass('module__box--red module__box--green')
+      }
+
+      function makeBlue($object) {
+        $object.removeClass('module__box--red module__box--green')
           .addClass('module__box--blue');
       }
     };
